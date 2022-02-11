@@ -1,0 +1,3 @@
+﻿ New-GPO -Name Autoplay_gpo | New-GPLink -Target "DC=corp, DC=mrgeng, DC=ru"
+ Set-GPRegistryValue -Name "Autoplay_gpo" -Key "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName NoDriveTypeAutorun -Type DWord -Value 255
+ Set-GPRegistryValue -Name "Autoplay_gpo" -Key "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" -ValueName NoAutorun -Type DWord -Value 1
