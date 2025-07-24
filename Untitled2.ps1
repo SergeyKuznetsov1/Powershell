@@ -1,17 +1,8 @@
-﻿
- Foreach($exclude in $excludeArray)  
-                        { 
-                        if($AppName.StartsWith($exclude) -eq $TRUE) 
-                            { 
-                            $donotwrite = $true 
-                            break 
-                            } 
-                        } 
-            if ($donotwrite -eq $false)  
-                        {                         
-            $Object += New-Object PSObject -Property @{ 
-            Appication = $AppName; 
+﻿$sourceDirPath = 'D:\--From'
+$destDirPath = 'D:\--To'
 
+$sourceDirInfo = New-Object IO.DirectoryInfo($sourceDirPath)
+$destDirInfo = New-Object IO.DirectoryInfo($destDirPath)
 
-Foreach             
-where {$name -eq 'running' }) 
+$directorySecurity = $sourceDirInfo.GetAccessControl([System.Security.AccessControl.AccessControlSections]:: Access)
+$destDirInfo.SetAccessControl($directorySecurity)
